@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+/* disable text-selection */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.navbar {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+  /* the rest of your styling */
+}
+
+/* Puzzle input in navbar */
+#puzzle {
+  padding: 3px;
+
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  text-align-last: center;
+  font-size: 17px;
+  border-style: none;
+  outline: none;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+/* Hover over nav elems */
+
+.style a:hover {
+  /* border-top: 4px solid white; */
+  border-bottom: 2px solid white;
+  padding: 6px 0;
+  background-color: #f04e3e;
+}
+
+#nav-logo {
+  max-height: 40px;
+  max-width: 30%;
+  overflow: visible;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.main-container {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow: hidden;
+  padding-top: 20px;
+  color: #fff;
+}
+
+.split-left {
+  width: 80%;
+  left: 0;
+  background-color: #a3dacc;
+  color: #222222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#scrmb {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#scrmb h3 {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-bottom: 8px;
+  font-family: "Archivo Black", sans-serif;
+}
+
+#scrmb i {
+  margin-left: 15px;
+  border-radius: 50%;
+}
+
+#scrmb i:hover {
+  cursor: pointer;
+  background-color: #222222;
+  outline: none;
+  border-radius: 50%;
+  padding: 6px;
+  color: #fff;
+  transition: 0.5s ease-out;
+}
+
+#scram {
+  margin-top: 2%;
+}
+
+#displayTime {
+  width: 310px;
+  height: 100px;
+  font-size: 5em;
+  margin-left: 10%;
+  /* background-color: red; */
+  font-family: "Archivo Black", sans-serif;
+}
+
+.footer-container {
+  width: 85%;
+  margin-bottom: 1.2rem;
+  /* margin-bottom: 2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-container #stats {
+  width: 270px;
+  height: 120px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Yusei Magic", sans-serif;
+  letter-spacing: 2px;
+  background-color: #f04e3e;
+  color: whitesmoke;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  outline: none;
+}
+
+.footer-container #stats .stats-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.footer-container #stats:hover {
+  filter: brightness(110%);
+}
+
+.footer-container #stats span:hover {
+  background: whitesmoke;
+  padding: 1px;
+  border-radius: 5px;
+  color: #f04e3e;
+}
+
+.footer-container .broughtBy {
+  align-self: flex-end;
+}
+
+.footer-container .button-container {
+  align-self: flex-end;
+}
+
+.footer-container .button-container button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background: #333;
+  outline: none;
+  padding: 0.5rem 1.8rem;
+  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+}
+
+.footer-container .button-container button:hover {
+  filter: brightness(110%);
+  background-color: #38a1f3;
+}
+
+.footer-container .button-container button:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+
+.twitter-button:hover {
+  color: #fff;
+}
+
+.fa-twitter {
+  font-size: 1.5rem;
+}
+
+#stats:hover {
+  filter: brightness(110%);
+}
+
+#stats span:hover {
+  background: whitesmoke;
+  padding: 1px;
+  border-radius: 5px;
+  color: #f04e3e;
+}
+
+.split-right {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #f04e3e;
+  overflow: hidden;
+  font-family: "Yusei Magic", sans-serif;
+  box-shadow: -8px 0 8px 1px rgba(51, 51, 51, 0.774);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.split-right .heading {
+  margin-top: 3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 2em;
+}
+
+.split-right #clear {
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  outline: none;
+  border: 0;
+  background-color: #333;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.split-right #puzzleSelected {
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.842);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: red;
+  padding: 2px 10px;
+}
+
+.split-right a {
+  color: rgba(255, 255, 255, 0.897);
+  outline: none;
+  text-decoration: none;
+}
+
+a:focus {
+  cursor: pointer;
+}
+
+.split-right #listOfTime {
+  border: 1px solid #333;
+  background-color: rgba(255, 255, 255, 0.808);
+  color: #222222;
+  width: 90%;
+  height: 60%;
+  overflow-y: auto;
+  scroll-behavior: auto smooth;
+}
+
+.time-btn {
+  position: absolute;
+  left: 37%;
+  top: 65%;
+  display: none;
+  outline: none;
+  border-radius: 4px;
+  border: none;
+  color: #f04e3e;
+  cursor: pointer;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.time-btn:hover {
+  background-color: #f04e3e;
+  color: #fff;
+}
+
+.time-btn:active {
+  transform: scale(0.98);
+  outline: none;
+}
+
+/* media queries */
+@media (max-width: 810px) {
+  .split-left {
+    width: 65%;
+  }
+
+  .split-right {
+    width: 35%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 33%;
+  }
+
+  .footer-container .broughtBy {
+    text-align: center;
+  }
+}

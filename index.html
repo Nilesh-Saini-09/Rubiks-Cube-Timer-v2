@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Timer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="snackbar.css">
+    
+    <!-- <link rel="stylesheet" href="themeToggler.css"> -->
+
+</head>
+<body>
+     <!-- Navbar -->
+     <nav id='main-nav' class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand "> <img id='nav-logo' src='logo.png'> CubeTimer</a>
+            <button class="navbar-toggler" data-toggle='collapse' data-target='#navbarCollapse'>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item style">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item style">
+                      <a href="#explore-head-section" class="nav-link active">Products</a>
+                  </li>
+                  <li class="nav-item style">
+                      <a href="#create-head-section" class="nav-link active">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#create-head-section" class="nav-link active">
+                      <!-- <a href="#share-head-section" class="nav-link active">Share</a> -->
+                      <select name="puzzle" id="puzzle" onchange="puzzle_select()">
+                        <option value="3">3x3x3</option>
+                        <option value="2">2x2x2</option>
+                        <!-- <option value="3">3x3x3</option> -->
+                        <option value="4">4x4x4</option>
+                        <option value="5">5x5x5</option>
+                        <option value="6">Pyraminx</option>
+                        <option value="7">Skewb</option>
+                      </select>
+                      </a>
+                  </li>
+
+                  <li class="nav-item style">
+                    
+                </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- body -->
+
+    <div class="main-container">
+        <div class="split split-left">
+            <!-- <button class="time-btn" data-toggle-sidebar="sidebar1">Times</button> -->
+            
+             <!-- Scramble Starts -->
+             <div class="container" id='scrmb'>
+                <h3 class="noselect">Scramble <i class="fas fa-sync-alt fa-xs" id="newScramGenerate"></i></h3> 
+                <span class="h4" id="scram"></span>
+            </div>
+
+
+            <div id='displayTime'>
+
+                <span id='minute' ></span>
+                <span id='minColon'></span>
+                <span id='second'>0</span><span >.</span><span id='milliSec'>00</span>
+                
+            </div>
+
+            <button class="time-btn" data-toggle-sidebar="sidebar1">Toggle Sidebar</button>
+
+            <div class="footer-container">
+                <div id="stats">
+                   <div class="stats-content">
+                    <span class = "solveNum">Solves: 0</span> <br/>
+                    <span id = "overallAv">Average: </span><br/>
+                    <span id = "fastest">Best: </span>
+                   </div>
+                </div>
+                <div id="snackbar">Cleared All Times...</div>
+                
+                <div class="broughtBy">
+                    <h6 id='broughtBy'><span>&#169;</span> Brought to you by SpeedcubingComplete</h6>
+                </div>
+
+             
+            <div class="button-container">
+                <button class="twitter-button" id="twitter" title='Tweet This!'>
+                    <i class="fab fa-twitter"></i>
+                </button>
+            </div>
+            
+            </div>
+
+            
+              
+        </div>
+
+        
+        <div class="split split-right">
+           
+            <div class="heading">
+                <a href='#' id='heading'>Solves</a>
+            </div>
+            <div><button id="clear">Clear Times</button></div>
+            <div id="puzzleSelected">3x3x3</div>
+            <div id="listOfTime"></div>
+        </div>
+
+        
+        
+    </div>
+
+    <!-- Script Tags -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scrambler.js"></script>
+    <script src="shareTime.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
