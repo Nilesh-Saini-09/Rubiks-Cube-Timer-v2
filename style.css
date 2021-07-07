@@ -20,6 +20,11 @@
   /* the rest of your styling */
 }
 
+/* body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+} */
+
 /* Puzzle input in navbar */
 #puzzle {
   padding: 3px;
@@ -53,9 +58,12 @@
 }
 
 .main-container {
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-y: hidden;
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
+  display: flex;
   background-color: yellow;
 }
 
@@ -174,7 +182,7 @@
   align-self: flex-end;
 }
 
-.footer-container .button-container {
+.footer-container .button-container button {
   align-self: flex-end;
 }
 
@@ -306,6 +314,10 @@ a:focus {
   outline: none;
 }
 
+#showTimes {
+  visibility: hidden;
+}
+
 /* media queries */
 @media (max-width: 810px) {
   .split-left {
@@ -324,5 +336,38 @@ a:focus {
 
   .footer-container .broughtBy {
     text-align: center;
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    overflow-x: hidden;
+  }
+  .split {
+    position: relative;
+  }
+
+  .main-container {
+    flex-direction: column;
+    height: 200vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .split-left {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .split-right {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 490px) {
+  #displayTime {
+    font-size: 3.8em;
+    margin-left: 10%;
   }
 }

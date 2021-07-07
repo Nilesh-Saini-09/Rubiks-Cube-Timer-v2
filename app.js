@@ -11,6 +11,9 @@ var scramble = document.querySelector('#scram');
 var newScramGenerate = document.querySelector('#newScramGenerate');
 var clearAll = document.querySelector('#clear');
 var showHtl = document.querySelector('.showHtl');
+var showTimes = document.querySelector('#showTimes');
+var splitRight = document.querySelector('.split-right');
+
 var puzzleSelect;
 var savedTimes;
 // new variables stats
@@ -24,6 +27,8 @@ var numSolves = 0;
 var total = 0;
 var numSolvesOut = document.querySelector(".solveNum");
 // ends here
+
+
 
 
 
@@ -205,7 +210,14 @@ function view() {
 
 // timer will work when the key goes up
 
-window.onkeyup = run;
+// window.onkeyup = run;
+window.addEventListener('keyup', (e) => {
+  if(e.keyCode === 32){
+      run();
+  } else {
+      snackbar();
+  }
+})
 timeList.onload = view();
 timeList.scrollTop = timeList.scrollHeight;
 
@@ -327,3 +339,9 @@ function snackbar() {
     snackbar.className = snackbar.className.replace("show", "");
   }, 3000);
 }
+
+window.addEventListener("keydown", function(e) {
+  if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+      e.preventDefault();
+  }
+}, false);
