@@ -196,7 +196,7 @@
   align-self: flex-end;
 }
 
-.footer-container .button-container button {
+.split-right .button-container button {
   cursor: pointer;
   font-size: 1.2rem;
   height: 2.5rem;
@@ -209,12 +209,12 @@
   box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
 }
 
-.footer-container .button-container button:hover {
+.split-right .button-container button:hover {
   filter: brightness(110%);
   background-color: #38a1f3;
 }
 
-.footer-container .button-container button:active {
+.split-right .button-container button:active {
   transform: translate(0, 0.3rem);
   box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
 }

@@ -14,6 +14,7 @@ var clearAll = document.querySelector("#clear");
 var showHtl = document.querySelector(".showHtl");
 var showTimes = document.querySelector("#showTimes");
 var splitRight = document.querySelector(".split-right");
+var splitLeft = document.querySelector(".split-left");
 
 var puzzleSelect;
 var savedTimes;
@@ -172,8 +173,17 @@ function store() {
 
 function view() {
   if (localStorage.getItem("data") != null) {
-    timeList.textContent = JSON.parse(localStorage.getItem("data"));
+    let data = JSON.parse(localStorage.getItem("data"));
+    timeList.textContent = data;
+    numSolvesOut.innerHTML = "Solves: " + data.length;
+    bestOut.innerHTML = "Best: " + data.sort((a,b) => a-b)[0];
+    let avgData = Object.values(data).map(Number).slice(1, data.length-1).reduce((a,b) => a+b, 0);
+    let avgLength = data.length - 2;
+    let avg = avgLength <= 0 ? '' : avgData/avgLength;
+    avAllOut.innerHTML = "Average: " + `${avg}`.slice(0, 4);
+    //console.log([avgData, avgLength]);
   }
+  
 }
 
 
@@ -191,19 +201,9 @@ function snackbar() {
   }, 3000);
 }
 
-displayTimeContainer.addEventListener("click", run);
+//displayTimeContainer.addEventListener("click", run);
 // timer will work when the key goes up
 
-
-
-// window.onkeyup = run;
-window.addEventListener("keyup", (e) => {
-  if (e.keyCode === 32) {
-    run();
-  } else {
-    //snackbar();
-  }
-});
 
 
 
@@ -220,10 +220,13 @@ function puzzle_select() {
 puzzle.addEventListener("change", function () {
   if (puzzleSelect === "2") {
     scrambleGen2();
+    store();
+    view();
     puzzleSelected.textContent = "2x2x2";
   }
   if (puzzleSelect === "3") {
     scrambleGen3();
+    view();
     puzzleSelected.textContent = "3x3x3";
   }
   if (puzzleSelect === "4") {
@@ -310,31 +313,48 @@ function formatTime(t) {
   return out;
 }
 
-newScramGenerate.addEventListener("click", function () {
+// newScramGenerate.addEventListener("click", function () {
   
-  switch (puzzleSelect) {
-    case "2":
-      scrambleGen2();
-      break;
-    case "3":
-      scrambleGen3();
-      break;
-    case "4":
-      scrambleGen4();
-      break;
-    case "5":
-      scrambleGen5();
-      break;
-    case "6":
-      pyraminx();
-      break;
-    case "7":
-      skewb();
-      break;
-    default:
-      scrambleGen3();
+//   switch (puzzleSelect) {
+//     case "2":
+//       scrambleGen2();
+//       break;
+//     case "3":
+//       scrambleGen3();
+//       break;
+//     case "4":
+//       scrambleGen4();
+//       break;
+//     case "5":
+//       scrambleGen5();
+//       break;
+//     case "6":
+//       pyraminx();
+//       break;
+//     case "7":
+//       skewb();
+//       break;
+//     default:
+//       scrambleGen3();
+//   }
+// });
+
+// function printMousePos(e) {
+  
+//   console.log( [e.screenX, e.screenY]);
+// }
+
+splitLeft.addEventListener("click", run);
+
+// window.onkeyup = run;
+window.addEventListener("keyup", (e) => {
+  if (e.keyCode === 32) {
+    run();
+  } else {
+    //snackbar();
   }
 });
+
 
 
 window.addEventListener(
