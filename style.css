@@ -130,8 +130,18 @@
   height: 100px;
   font-size: 5em;
   margin-left: 10%;
-  /* background-color: red; */
+  /* background-color: yellow; */
   font-family: "Archivo Black", sans-serif;
+  user-select: none;
+}
+
+.display-time-container {
+  width: 100vw;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
 }
 
 .footer-container {
@@ -261,6 +271,7 @@
   background-color: #333;
   color: #fff;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .split-right #puzzleSelected {
@@ -331,11 +342,14 @@ a:focus {
   .footer-container {
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     height: 33%;
   }
 
   .footer-container .broughtBy {
     text-align: center;
+    align-self: center;
   }
 }
 
@@ -366,8 +380,13 @@ a:focus {
 }
 
 @media (max-width: 490px) {
-  #displayTime {
-    font-size: 3.8em;
-    margin-left: 10%;
+  .split-left #displayTime {
+    font-size: 3.2em;
+    text-align: center;
+    /* background-color: red; */
+  }
+
+  #scram {
+    font-size: 0.9rem;
   }
 }

@@ -67,3 +67,16 @@
     opacity: 0;
   }
 }
+
+/* media queries */
+@media (max-width: 810px) {
+  #snackbar {
+    left: 30%; /* Center the snackbar */
+  }
+}
+
+@media (max-width: 490px) {
+  #snackbar {
+    left: 30%; /* Center the snackbar */
+  }
+}
