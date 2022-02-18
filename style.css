@@ -166,6 +166,7 @@
   position: relative;
   border-radius: 5px;
   outline: none;
+  user-select: none;
 }
 
 .footer-container #stats .stats-content {
@@ -175,6 +176,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  user-select: none;
 }
 
 .footer-container #stats:hover {
